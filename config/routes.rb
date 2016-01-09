@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-   get "students" => 'students#index'
+   root "students#index"
+   resources :students, only: [:new, :create, :destroy]
 end

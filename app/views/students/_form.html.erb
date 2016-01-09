@@ -1,0 +1,21 @@
+<div class="ui form">
+   <%= form_for @student do |f| %>
+      <div class="field">
+         <%= f.label :name %><br>
+         <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+         <%= f.label :register_number %><br>
+         <%= f.text_field :register_number %>
+      </div>
+
+      <div class="field">
+      	<%= f.label :status %><br>
+      	<%= f.number_field :status %>
+      </div>
+      <br>
+      <%= f.submit class: "btn btn-success" %>
+      <%= link_to "Back", :root, class: "btn btn-info" %>
+   <%end %>
+</div>
