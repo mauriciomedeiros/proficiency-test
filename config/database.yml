@@ -3,6 +3,7 @@ development:
   encoding: unicode
   database: proficiency-test_development
   pool: 5
+  host: localhost
   username: root
   password: "123"
 
