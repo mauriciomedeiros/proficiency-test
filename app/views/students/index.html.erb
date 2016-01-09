@@ -12,6 +12,7 @@
          <td><b>Register Number</b></td>
          <td class="text-center" ><b>Status</b></td>
          <td></td>
+         <td></td>
       </tr>
    </thead>
 
@@ -21,6 +22,7 @@
             <td> <%= student.name %> </td>
             <td> <%= student.register_number %> </td>
             <td class="text-center" > <%= student.status %> </td>
+            <td class="text-center" > <%= button_to "Edit", edit_student_path(student), class: "btn btn btn-warning" %> </td>
             <td class="text-center" > <%= button_to "Destroy", student, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?'} %> </td>
         </tr>
       <% end  %>

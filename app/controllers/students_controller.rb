@@ -23,9 +23,18 @@ class StudentsController < ApplicationController
 		redirect_to root_url
 	end
 
+   def edit
+      set_student_fields
+   end
+
    private
 
    def student_params
       params.require(:student).permit :name, :register_number, :status
+   end
+
+   def set_student_fields
+      id = params[:id]
+      @student = Student.find(id)
    end
 end

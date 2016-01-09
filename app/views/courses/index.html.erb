@@ -1,0 +1,30 @@
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Courses</h1>
+<%= link_to 'New Course', new_course_path, class: "btn btn-primary" %>
+<br><br>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+         <td><b>Name</b></td>
+         <td><b>Description</b></td>
+         <td class="text-center" ><b>Status</b></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </thead>
+
+   <tbody>
+      <% @courses.each do |course| %>
+         <tr>
+            <td> <%= course.name %> </td>
+            <td> <%= course.description %> </td>
+            <td class="text-center" > <%= course.status %> </td>
+            <td class="text-center" > <%= button_to "Edit", edit_course_path(course), class: "btn btn btn-warning" %> </td>
+            <td class="text-center" > <%= button_to "Destroy", course, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?'} %> </td>
+        </tr>
+      <% end  %>
+   </tbody>
+</table>
