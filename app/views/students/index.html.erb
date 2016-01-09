@@ -8,9 +8,9 @@
 <table class="table table-bordered">
    <thead>
       <tr>
-         <td>Name</td>
-         <td>Register Number</td>
-         <td align="center">Status</td>
+         <td><b>Name</b></td>
+         <td><b>Register Number</b></td>
+         <td class="text-center" ><b>Status</b></td>
          <td></td>
       </tr>
    </thead>
@@ -20,8 +20,8 @@
          <tr>
             <td> <%= student.name %> </td>
             <td> <%= student.register_number %> </td>
-            <td align="center"> <%= student.status %> </td>
-            <td align="center"> <%= button_to "Destroy", student, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?'} %> </td>
+            <td class="text-center" > <%= student.status %> </td>
+            <td class="text-center" > <%= button_to "Destroy", student, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?'} %> </td>
         </tr>
       <% end  %>
    </tbody>
