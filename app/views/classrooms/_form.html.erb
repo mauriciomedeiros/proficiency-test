@@ -1,3 +1,7 @@
+<% @classroom.errors.full_messages.each do |message| %>
+   <div class="alert alert-danger" role="alert"><%=message%> </div>
+<% end %>
+
 <div class="ui form">
    <%= form_for @classroom do |f| %>
       <div class="field">

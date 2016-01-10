@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
       @course = Course.new course_params
       if @course.save
          flash[:notice] = "Course was successfully created."
-			redirect_to root_url
+			redirect_to courses_url
       else
          render :new
       end
@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
    def destroy
 		id = params[:id]
 		Course.destroy id
-		redirect_to root_url
+		redirect_to courses_url
 	end
 
    def edit

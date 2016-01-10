@@ -1,8 +1,9 @@
+<h1>Courses</h1>
+
 <% if flash[:notice] %>
     <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
 <% end %>
 
-<h1>Courses</h1>
 <%= link_to 'New Course', new_course_path, class: "btn btn-primary" %>
 <br><br>
 <table class="table table-bordered">
