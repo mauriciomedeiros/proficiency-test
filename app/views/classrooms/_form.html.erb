@@ -1,0 +1,15 @@
+<div class="ui form">
+   <%= form_for @classroom do |f| %>
+      <div class="field">
+         <%= f.label :student %><br>
+         <%= f.collection_select :student_id, @students, :id, :name %>
+      </div>
+      <div class="field">
+         <%= f.label :course %><br>
+         <%= f.collection_select :course_id, @courses, :id, :name %>
+      </div>
+      <br>
+      <%= f.submit "Save", class: "btn btn-success" %>
+      <%= link_to "Back", :classrooms, class: "btn btn-info" %>
+   <%end %>
+</div>

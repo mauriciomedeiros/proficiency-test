@@ -3,4 +3,6 @@ Rails.application.routes.draw do
    resources :students, only: [:new, :create, :destroy, :edit]
 
    resources :courses, only: [:index,:new, :create, :destroy, :edit]
+
+   resources :classrooms, only: [:index,:new, :create, :destroy, :edit]
 end

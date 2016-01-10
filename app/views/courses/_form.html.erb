@@ -7,7 +7,7 @@
 
       <div class="field">
          <%= f.label :description %><br>
-         <%= f.text_field :description %>
+         <%= f.text_area :description, rows: 4 %>
       </div>
 
       <div class="field">
@@ -16,6 +16,6 @@
       </div>
       <br>
       <%= f.submit "Save", class: "btn btn-success" %>
-      <%= link_to "Back", :root, class: "btn btn-info" %>
+      <%= link_to "Back", :courses, class: "btn btn-info" %>
    <%end %>
 </div>
