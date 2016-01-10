@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+   <%= nav_bar brand: "Xpto", brand_link: root_url do %>
+      <%= menu_group do %>
+         <%= menu_item "Students", root_path %>
+         <%= menu_item "Courses", courses_url %>
+         <%= menu_item "Classrooms", classrooms_url %>
+      <% end %>
+   <% end %>
    <div class="container">
       <%= yield %>
    </div>
