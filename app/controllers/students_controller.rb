@@ -17,6 +17,16 @@ class StudentsController < ApplicationController
       end
    end
 
+   def update
+      @student = set_student_fields
+      if @student.update student_params
+         flash[:notice] = "Student was successfully updated."
+			redirect_to root_url
+      else
+         render :edit
+      end
+   end
+
    def destroy
 		id = params[:id]
 		Student.destroy id

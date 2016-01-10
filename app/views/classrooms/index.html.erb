@@ -9,7 +9,7 @@
 <table class="table table-bordered">
    <thead>
       <tr  class="something">
-         <th>Studen</th>
+         <th>Student</th>
          <th>Course</th>
          <th class="text-center col-md-2" >Entry at</th>
          <th class="col-md-1"></th>
@@ -22,7 +22,7 @@
          <tr>
             <td> <%= classroom.student.name %> </td>
             <td> <%= classroom.course.name %> </td>
-            <td class="text-center" > <%= classroom.entry_at %> </td>
+            <td class="text-center" > <%= classroom.entry_at.strftime("%d/%m/%Y %H:%M:%S")%> </td>
             <td class="text-center span1" > <%= button_to "Edit", edit_classroom_path(classroom), class: "btn btn btn-warning" %> </td>
             <td class="text-center" > <%= button_to "Destroy", classroom, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?'} %> </td>
         </tr>

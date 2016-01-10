@@ -17,6 +17,16 @@ class CoursesController < ApplicationController
       end
    end
 
+   def update
+      @course = set_course_fields
+      if @course.update course_params
+         flash[:notice] = "Course was successfully updated."
+			redirect_to courses_url
+      else
+         render :edit
+      end
+   end
+
    def destroy
 		id = params[:id]
 		Course.destroy id

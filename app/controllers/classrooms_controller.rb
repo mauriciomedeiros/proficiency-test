@@ -10,14 +10,23 @@ class ClassroomsController < ApplicationController
    end
 
    def create
-      puts"--------------------------------#{classroom_params}"
       @classroom = Classroom.new classroom_params
-      #@classroom.entry_at = Time.zone.now
+      @classroom.entry_at = Time.zone.now
       if @classroom.save
          flash[:notice] = "Classroom was successfully created."
 			redirect_to classrooms_url
       else
          render :new
+      end
+   end
+
+   def update
+      @classroom = set_classroom_fields
+      if @classroom.update classroom_params
+         flash[:notice] = "Classroom was successfully updated."
+			redirect_to classrooms_url
+      else
+         render :edit
       end
    end
 
@@ -28,8 +37,8 @@ class ClassroomsController < ApplicationController
 	end
 
    def edit
-      set_classroom_fields
       load_students_and_courses
+      set_classroom_fields
    end
 
    private
